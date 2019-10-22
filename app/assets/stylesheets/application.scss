@@ -9,6 +9,11 @@ body {background-image: url("Shinkansan.jpg");
       padding-bottom: 120px;/*←footerの高さ*/
       box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
 }
+
+h1 {
+    margin-top: 15px;
+}
+
 .margin-top-10
 {
     margin-top: 10px;
