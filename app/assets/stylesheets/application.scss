@@ -1,9 +1,13 @@
 @import "bootstrap";
 body {background-image: url("Shinkansan.jpg"); 
-      background-color:rgba(255,255,255,0.85);
+      background-color:rgba(255,255,255,0.9);
       background-position: center;
       background-size:cover;
       background-blend-mode:lighten;
+      min-height: 100vh;
+      position: relative;/*←相対位置*/
+      padding-bottom: 120px;/*←footerの高さ*/
+      box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
 }
 .margin-top-10
 {
@@ -14,4 +18,25 @@ body {background-image: url("Shinkansan.jpg");
     width: 100%;
     height: 350px;
     object-fit: cover;
+}
+
+.task-list-image {
+    width: 50%;
+    height: 100px;
+    object-fit:cover;
+    vertical-align:top;
+    margin: 0px;
+    line-height: 0;
+}
+
+footer{
+    width: 100%;
+    background-color: #89c7de;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 24px;
+    
+    position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
 }
