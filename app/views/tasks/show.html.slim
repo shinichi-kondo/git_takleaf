@@ -1,4 +1,4 @@
-h1 タスクの新規登録
+h1 タスク一覧
 
 .nav.justify-content-end
   = link_to '一覧', tasks_path, class: 'nav-link' 
@@ -13,6 +13,9 @@ table.table.table-hover
         tr  
           th= Task.human_attribute_name(:description)
           td= auto_link(simple_format(h(@task.description), {}, sanitize: false, wrapper_tag: "div"))
+        tr
+          th= Task.human_attribute_name(:image)
+          td= (image_tag @task.image,class: 'task-image') if @task.image.attached?
         tr  
           th= Task.human_attribute_name(:created_at)
           td= @task.created_at
@@ -20,4 +23,4 @@ table.table.table-hover
           th= Task.human_attribute_name(:updated_at)
           td= @task.updated_at
 
-= link_to '編集', edit_task_path, class: 'btn btn-primary mr-3'
+= link_to '編集', edit_task_path, class: 'btn btn-primary mb-3'
