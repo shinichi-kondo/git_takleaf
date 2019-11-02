@@ -53,8 +53,12 @@ class TasksController < ApplicationController
   end
   
   def import
-    current_user.tasks.import(params[:file])
-    redirect_to task_url, notice: "タスクを追加しました"
+    if params[:csv_file].blank?
+      redirect_to tasks_url, notice: '読み込むCSVを選択してください'
+    else
+      current_user.tasks.import(params[:file])
+      redirect_to tasks_url, notice: "タスクを追加しました"
+    end  
   end  
   
   private
